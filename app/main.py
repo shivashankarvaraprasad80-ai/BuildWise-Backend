@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routes import project  # or whatever routers you have
+from app.routes import project,analysis,upload  # or whatever routers you have
 
 app = FastAPI(
     title="BuildWise Backend",
@@ -14,3 +14,5 @@ def root():
 
 # include routers
 app.include_router(project.router)
+app.include_router(analysis.router)
+app.include_router(upload.router)
